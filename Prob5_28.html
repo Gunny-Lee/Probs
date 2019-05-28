@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>juso</title>
+<script>
+
+
+var data = [
+      {"name":"알라딘","age":27},
+      {"name":"자스민","age":31},
+      {"name":"지니","age":29},
+      {"name":"야파","age":25},
+      {"name":"ㅇㅇ","age":23}
+     ]
+
+var d = JSON.stringify(data);
+
+var obj = JSON.parse(d)
+
+const log = console.log;
+
+function getData(){
+   var result = document.getElementById('result')
+   var tag='';
+   tag += '<tr><th>이름</th><th>주소</th></tr>'
+   for(let data of obj){
+
+      tag +='<tr><td>'
+      tag += data.name
+      tag +='</td>'
+      tag +='<td>'
+      tag +=data.age
+      tag +='</td></tr>'
+
+   }
+
+   result.innerHTML = tag;
+}
+</script>
+</head>
+<body>
+	<button onclick="getData()">Data 가져오기</button>
+	<table border = "1" id="result"></table>
+
+</body>
+</html>
